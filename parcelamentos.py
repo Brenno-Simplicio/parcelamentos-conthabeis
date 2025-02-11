@@ -80,7 +80,7 @@ if parcelamentos:
 
     # Criar colunas editáveis para o status
     for i in range(len(df)):
-        df.at[i, "status"] = st.selectbox(f"Status ({df.at[i, 'cliente']})", status_opcoes, index=status_opcoes.index(df.at[i, "status"]))
+        df.at[i, "status"] = st.selectbox(f"Status ({df.at[i, 'cliente']})", status_opcoes, index=status_opcoes.index(df.at[i, "status"]), key=f"status_{i}")
 
     # Mostrar a tabela formatada
     st.dataframe(df[["cliente", "tipo", "vencimento", "parcelas_total", "parcela_atual", "parcelas_atraso", "status"]])
